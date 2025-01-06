@@ -82,20 +82,35 @@
 
     <main>
         <section id="notices">
-            <h1>Public Notices</h1>
-            <div id="notice-list">
-                <p>To add notices, upload your documents to the repository and update the links below.</p>
-                <div class="notice">
-                    <h2>Notice Title Example 1</h2>
-                    <p>Details about the first notice. <a href="example_notice1.pdf" download>Download</a></p>
-                </div>
-                <div class="notice">
-                    <h2>Notice Title Example 2</h2>
-                    <p>Details about the second notice. <a href="example_notice2.pdf" download>Download</a></p>
-                </div>
-                <!-- Add more notices here -->
-            </div>
-        </section>
+    <h1>Public Notices</h1>
+    <div id="notice-list">
+        <p>Loading notices...</p>
+    </div>
+</section>
+
+<script>
+    fetch('notices.json')
+        .then(response => response.json())
+        .then(notices => {
+            const noticeList = document.getElementById('notice-list');
+            noticeList.innerHTML = ''; // Clear loading message
+
+            notices.forEach(notice => {
+                const noticeDiv = document.createElement('div');
+                noticeDiv.className = 'notice';
+                noticeDiv.innerHTML = `
+                    <h2>${notice.title}</h2>
+                    <p>${notice.details} <a href="${notice.file}" download>Download</a></p>
+                `;
+                noticeList.appendChild(noticeDiv);
+            });
+        })
+        .catch(error => {
+            console.error('Error loading notices:', error);
+            document.getElementById('notice-list').innerHTML = '<p>Failed to load notices.</p>';
+        });
+</script>
+
 
         <section id="contact">
             <h1>Contact</h1>
