@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Notice Title Example 1",
+        "details": "Details about the first notice.",
+        "file": "example_notice1.pdf"
+    },
+    {
+        "title": "Notice Title Example 2",
+        "details": "Details about the second notice.",
+        "file": "example_notice2.pdf"
+    }
+]
