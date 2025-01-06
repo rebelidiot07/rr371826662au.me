@@ -1,12 +1,13 @@
 [
     {
-        "title": "JOB 32:21-22",
-        "details": "God doesn't respect persons or titles.",
-        "file": "JOB_32_21_KJV.pdf"
+        "title": "Notice Without File",
+        "details": "This notice doesn't have an associated file.",
+        "summary": "No file is available for this notice."
     },
     {
-        "title": "Notice Title Example 2",
-        "details": "Details about the second notice.",
-        "file": "example_notice2.pdf"
+        "title": "Notice With File",
+        "details": "Details about this notice.",
+        "summary": "This is a notice with an associated file.",
+        "file": "example_notice.pdf"
     }
 ]
